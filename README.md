@@ -32,6 +32,24 @@ Beyond code, I love sharing knowledge and inspiring the tech community through c
 
 ---
 
+<!-- SECTION B2: FEATURED PROJECTS -->
+## 💼 Featured Projects
+
+### 🤖 AI Testing Agent — Autonomous QA Orchestration
+A VS Code extension prototype that turns a plain-English testing requirement into an executed, validated test — without hand-scripting every step.
+
+- Takes a QA requirement in natural language, reasons about intent, and plans the workflow needed to execute and validate it
+- Built on the **VS Code Language Model API** (a standardized interface to the model, conceptually similar to how JDBC standardizes access to different databases) so the extension isn't tightly coupled to one model implementation
+- Orchestrates **MCP (Model Context Protocol)** tools for backend/database validation and **Playwright** for UI automation and evidence capture
+- Demonstrated end-to-end on a real enterprise workflow — enrolling a customer into a payment plan across a legacy account system, the core servicing application, and a downstream payment processor — validating UI completion, database state, transaction success, and cross-system logging from a single instruction
+- Exploring agentic failure analysis: reasoning about a failed step rather than hard-stopping the run
+
+**Tech:** VS Code Extension API · LLM/Agent orchestration · MCP · Playwright · TypeScript
+
+> The idea: AI has already accelerated code generation — this explores using AI agents to accelerate code validation and testing.
+
+---
+
 <!-- SECTION C: TECH STACK -->
 ## 🛠️ Tech Stack
 
@@ -99,22 +117,13 @@ Beyond code, I love sharing knowledge and inspiring the tech community through c
 
 <div align="center">
 
-  <img src="https://github-readme-stats.vercel.app/api?username=speri99&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Sarma's GitHub Stats" width="49%" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=speri99&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Sarma's GitHub Stats" width="49%" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=speri99&theme=tokyonight&hide_border=true" alt="Sarma's Streak Stats" width="49%" />
 
   <br/>
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=speri99&layout=compact&theme=tokyonight&hide_border=true&langs_count=10" alt="Top Languages" width="50%" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=speri99&layout=compact&theme=tokyonight&hide_border=true&langs_count=10" alt="Top Languages" width="50%" />
 
-</div>
-
----
-
-<!-- SECTION F: GITHUB TROPHIES -->
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=speri99&theme=darkhub&no-frame=true&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
 </div>
 
 ---
