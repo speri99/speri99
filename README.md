@@ -3,16 +3,13 @@
   <img src="https://komarev.com/ghpvc/?username=speri99&label=Profile%20Views&color=0e75b6&style=flat" alt="speri99 profile views" />
 </p>
 
-<!-- SECTION A: ANIMATED HEADER -->
+<!-- SECTION A: HEADER -->
 <div align="center">
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35">
-  <h1>Hey, I'm Sarma Peri!</h1>
+  <h1>Hey, I'm Sarma Peri 👋</h1>
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=00D9FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%7C+12+Years+Exp;Java+%7C+Spring+Boot+%7C+Microservices;Angular+%7C+React+%7C+Modern+Web+Dev;Building+Scalable+%26+Robust+Solutions" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=00D9FF&center=true&vCenter=true&width=650&lines=12%2B+years+shipping+Java%2FSpring+%26+Angular%2FReact+systems;Lately%3A+React+Native+%2B+AI+agents+for+test+automation;I+build+the+thing%2C+then+I+build+the+thing+that+checks+it" alt="Typing SVG" />
   </a>
-
-  <p><em>"Code with purpose. Build with passion. Scale with confidence."</em></p>
 </div>
 
 ---
@@ -20,33 +17,48 @@
 <!-- SECTION B: ABOUT ME -->
 ## 🚀 About Me
 
-I'm a passionate **Full Stack Developer** with **12+ years** of hands-on experience crafting scalable enterprise applications and modern web experiences. From designing robust microservices with **Java & Spring Boot** to building sleek, responsive UIs with **Angular & React** — I do it all, and I do it well.
+12+ years building backend systems in **Java/Spring Boot** and front ends in **Angular** and **React/Next.js**, mostly on enterprise workflows — reconciliation, case management, multi-tenant admin platforms. The repos below are a real cross-section of that: an Angular reconciliation UI, a Next.js emergency-response case tracker, a React school-admin console.
 
-Beyond code, I love sharing knowledge and inspiring the tech community through content creation.
+More recently I've moved into two areas outside that day job:
 
-- 🎯 **12+ years** of full-stack engineering expertise across diverse industries
-- 🏗️ Specialized in **Microservices Architecture** & cloud-native development
-- 📚 Lifelong learner — always exploring the latest in tech & best practices
-- 🎥 Content creator on **YouTube, Medium & Instagram** — breaking down complex tech simply
-- ⚡ Fun fact: I debug faster with coffee ☕ and lo-fi music 🎵
+- **React Native** — a geofencing attendance tracker (see [Time Tracker](#-time-tracker) below) that does its own GPS-jitter filtering and hysteresis logic, fully offline
+- **AI agents for test automation** — exploring whether an LLM-driven agent can execute and validate a QA scenario from a plain-English description instead of a hand-scripted test
+
+Outside of code, I write/record about this stuff on YouTube and Medium.
 
 ---
 
 <!-- SECTION B2: FEATURED PROJECTS -->
 ## 💼 Featured Projects
 
-### 🤖 AI Testing Agent — Autonomous QA Orchestration
-A VS Code extension prototype that turns a plain-English testing requirement into an executed, validated test — without hand-scripting every step.
+### 📍 Time Tracker
+**[speri99/time-tracker](https://github.com/speri99/time-tracker)** · React Native (Expo), TypeScript
 
-- Takes a QA requirement in natural language, reasons about intent, and plans the workflow needed to execute and validate it
-- Built on the **VS Code Language Model API** (a standardized interface to the model, conceptually similar to how JDBC standardizes access to different databases) so the extension isn't tightly coupled to one model implementation
-- Orchestrates **MCP (Model Context Protocol)** tools for backend/database validation and **Playwright** for UI automation and evidence capture
-- Demonstrated end-to-end on a real enterprise workflow — enrolling a customer into a payment plan across a legacy account system, the core servicing application, and a downstream payment processor — validating UI completion, database state, transaction success, and cross-system logging from a single instruction
-- Exploring agentic failure analysis: reasoning about a failed step rather than hard-stopping the run
+Detects office check-in/out automatically by GPS geofencing — no manual clock-in, no server, no account. The interesting part is the detector, not the UI:
 
-**Tech:** VS Code Extension API · LLM/Agent orchestration · MCP · Playwright · TypeScript
+- Tracks signed perpendicular distance from a "gate" line and latches which side you're on, with a ±15m dead band so GPS jitter on the boundary can't fire false crossings (a Schmitt trigger, basically)
+- Layers an accuracy filter, a proximity check, an along-track check, a 90s debounce, and a staleness flag before any crossing is written
+- Direction comes purely from which half-plane a fix lands in — never compass heading, so it's correct regardless of which way you're facing
+- Core detection logic (`crossingEngine`, `geo`, `sessions`) is pure and fully unit-tested with no device required
 
-> The idea: AI has already accelerated code generation — this explores using AI agents to accelerate code validation and testing.
+### 🛡️ SafeSignal
+**[speri99/gaied-f-b-i](https://github.com/speri99/gaied-f-b-i)** · Next.js, TypeScript, AWS (Bedrock, DynamoDB, Pinpoint)
+
+A panic-button case management platform for domestic violence emergency response — one tap creates a case record with victim/location/incident details and notifies authorities in real time, no typing or calling required in the moment.
+
+### 🏫 School OS
+**[speri99/school-plaform-ui](https://github.com/speri99/school-plaform-ui)** · React, Tailwind, Radix UI
+
+Front end for a multi-tenant school administration platform — org/school onboarding, super-admin and admin dashboards, role-based views for managing staff and student lifecycle.
+
+### 🤖 AI Testing Agent
+VS Code extension prototype — not yet public — that takes a QA requirement in plain English and executes/validates it instead of me hand-scripting every step.
+
+- Built on the **VS Code Language Model API** (a standardized interface to the model, similar in spirit to how JDBC standardizes access to different databases) rather than being tightly coupled to one model implementation
+- Orchestrates **MCP** for backend/database validation and **Playwright** for UI automation and evidence capture
+- Demonstrated end-to-end on a real enterprise workflow — enrolling a customer into a payment plan across a legacy account system, the core servicing app, and a downstream payment processor — validating UI completion, DB state, transaction success, and cross-system logging from one instruction
+
+> The idea: AI already accelerated how fast I can write code. This is about using it to accelerate how fast I can validate it.
 
 ---
 
@@ -57,34 +69,30 @@ A VS Code extension prototype that turns a plain-English testing requirement int
 <p>
   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
 </p>
 
 ### ⚙️ Backend
 <p>
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
   <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />
-  <img src="https://img.shields.io/badge/Microservices-FF6B6B?style=for-the-badge&logo=apacheairflow&logoColor=white" />
-  <img src="https://img.shields.io/badge/REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Microservices-FF6B6B?style=for-the-badge&logo=apacheairflow&logoColor=white" />
 </p>
 
-### 🗄️ Databases & Tools
+### 🗄️ Data, Cloud & Tools
 <p>
   <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
   <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
   <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white" />
-  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white" />
 </p>
 
 ---
@@ -131,7 +139,7 @@ A VS Code extension prototype that turns a plain-English testing requirement int
 <!-- SECTION H: FOOTER -->
 ## 🤝 Let's Connect!
 
-I'm always open to exciting collaborations, freelance opportunities, or just a good tech conversation. Feel free to reach out!
+Open to collaborations, freelance work, or just a good conversation about testing, agents, or whatever I'm mid-debugging. Reach out.
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sharma-peri-8788b769/" target="_blank">
@@ -145,15 +153,8 @@ I'm always open to exciting collaborations, freelance opportunities, or just a g
   <a href="https://medium.com/@sarmaperi" target="_blank">
     <img src="https://img.shields.io/badge/Read_on_Medium-12100E?style=for-the-badge&logo=medium&logoColor=white" />
   </a>
-  &nbsp;
-  <a href="https://www.instagram.com/speri99" target="_blank">
-    <img src="https://img.shields.io/badge/Follow_on_Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-  </a>
 </p>
 
 <div align="center">
-  <p>⭐ <em>If you find my work helpful, consider starring my repos — it means the world!</em> ⭐</p>
-  <p><strong>💡 "Great software is built by people who care deeply about both the craft and the people it serves."</strong></p>
-
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" width="100%" />
 </div>
